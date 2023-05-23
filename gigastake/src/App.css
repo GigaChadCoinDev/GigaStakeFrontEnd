@@ -1,0 +1,291 @@
+
+
+.uil{
+  color: black;
+  display: block;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+
+
+
+.container{
+  
+  background-color: #D1F0F3;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-block: 4rem;
+  display:  grid;
+  grid-template-columns: 1.5fr 6fr;
+  gap: 1rem;
+  border: 1px solid rgb(210, 217, 238);
+  max-width: 40vw !important;
+  
+}
+
+
+.navigation{
+  padding-left: 1rem;
+  color: #588387;
+}
+
+
+
+.mainBG{
+  min-height: 100vh;
+  background-image: linear-gradient(145deg, #90dae1, #99dae1);
+}
+
+
+
+.main-container{
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.box{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fdfefe6b;
+  border-radius: 15px;
+  background-image: linear-gradient(145deg, #D1F0F3, #D2F0F3);
+  place-items: center;
+  
+}
+
+
+
+.navContainer{
+  padding: 1rem;
+  margin: auto;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-self: center;
+}
+
+
+
+.navLinks{
+  color: #324B4D;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+  font-family: 'Inter custom',sans-serif;
+  font-size: large;
+  
+}
+
+
+
+
+.navLinks:hover{
+  background-color: #88dae1;
+  color: black;
+  border-radius: .5rem;
+}
+
+
+
+
+.navLeft{
+  padding: 1rem;
+  float: left;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  justify-self: center;
+  
+}
+
+.navRight{
+  padding: 1rem;
+  float: right;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  justify-self: center;
+  
+}
+
+
+
+
+
+
+/* CSS */
+.button-18 {
+  align-items: center;
+  background-color: #588387;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.button-18:hover,
+.button-18:focus{ 
+  background-color: #a0dde2;
+  color: #63a9af;
+}
+
+
+.button-18:disabled { 
+  background-color: #a0dde2;
+  color: #ffffff;
+}
+
+
+
+.actionHeader{
+  
+  
+  
+  text-align: center;
+  padding: .25rem;
+  font-family: 'Inter custom',sans-serif;
+ 
+  
+  color: black;
+}
+
+.actionInputs{
+  
+  opacity: 1;
+  border-radius: 5px;
+  border: 1px #D1F0F3;
+  width:100%;
+  text-align: center;
+  background-color: #C6DEF0;
+  
+ 
+  
+
+}
+
+.generalText{
+ 
+  
+  width: 100%;
+  text-align: center;
+  justify-self: center;
+ 
+  font-family: 'Inter custom',sans-serif;
+ 
+  
+  color: black;
+  
+}
+
+
+.justToCenter{
+  justify-content: center;
+  text-align: center;
+  margin: 10;
+}
+
+
+
+.connectWalletAlert{
+ 
+  
+  width: 100%;
+  text-align: center;
+  
+ 
+  font-family: 'Inter custom',sans-serif;
+  border-radius: 6px;
+  background-color: #c7f0f5;
+  color: #458188;
+  margin: 10;
+  font-weight: bold;
+  font-size: large;
+  
+}
+
+
+
+.transactionText{
+ 
+  
+  width: 100%;
+  text-align: center;
+  overflow:auto;
+  font-size: medium;
+  font-family: 'Inter custom',sans-serif;
+ 
+  
+  color: rgb(168, 33, 33);
+  
+}
+
+
+
+
+.lds-circle {
+  display: block;
+  transform: translateZ(1px);
+  margin: auto;
+  text-align: center;
+}
+.lds-circle > div {
+
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  margin: auto;
+
+  border-radius: 50%;
+  background-image: linear-gradient(145deg, #8ad1d8, #88dae1);
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
