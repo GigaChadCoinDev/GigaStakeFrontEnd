@@ -13,6 +13,7 @@ import {Route, Routes} from "react-router-dom";
 import Welcome from './Welcome';
 import OwnerChecks from './ownerChecks';
 import LeftOver from './LeftOver';
+import Terms from './Terms';
 
 
 
@@ -134,6 +135,7 @@ function Container() {
             
             <Routes>
             <Route path="/" element={<Welcome/>}/>
+            <Route path="/terms" element={<Terms/>}/>
             <Route path="/claimrewards" element={<ClaimRewards accountLoggedIn={accountLoggedIn}  contractSigner={contractSigner} />} />
             <Route path="/authorize" element={<AuthMan  accountLoggedIn={accountLoggedIn}  contractProvider={contract} contractSigner={contractSigner}  />} />
             <Route path="/addrewards" element={<AddRewards accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner} contractAddress={contractAddress} />}/>

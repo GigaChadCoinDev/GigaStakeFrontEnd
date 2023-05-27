@@ -75,8 +75,8 @@
   font-family: 'Inter custom',sans-serif;
   font-size: large;
   cursor:pointer;
-  height: 35%;
-  width: 35%;
+  height: 30%;
+  width: 30%;
   
 }
 
@@ -412,4 +412,17 @@
   text-align: center;
   font-style: italic;
   font-size: large;
+}
+
+.termsAndConditionsDiv{
+  color: #010b0cb9;
+  font-family: 'Inter custom',sans-serif;
+  text-align: left;
+  font-weight: 600;
+}
+.termsAndConditionsDivBolder{
+  color: #010b0cb9;
+  font-family: 'Inter custom',sans-serif;
+  text-align: left;
+  font-weight: bolder;
 }
