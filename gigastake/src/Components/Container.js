@@ -1,4 +1,4 @@
-import styles from '../App.css';
+
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import AuthMan from './AuthMan';
@@ -11,20 +11,22 @@ import ClaimRewards from './ClaimRewards';
 import Navbar from './Navbar';
 import {Route, Routes} from "react-router-dom";
 import Welcome from './Welcome';
+import OwnerChecks from './ownerChecks';
+import LeftOver from './LeftOver';
 
-//import { Connect, authorizeRewardManager } from '../block.js';
+
 
 
 function Container() {
 
 
-    //const tokenAddress = "0xc1EA5572c1b72a61E068d5A5D23747F2cB315C88";
-    //const testAccountAddress = "0x3e0F6f247Ec73e49C947C378d19f35fEd76f4f4f";
-    const contractAddress = "0x1a13Cf460f8c2Ba9E08C98309ba451e544624Bf4";
+    
+    const contractAddress = "0xae2Bb4450D4d18c18AB7352E75e734B8a5427D76";
 
     const [errorMessage, setErrorMessage] = useState(null);
     const [accountLoggedIn, setAccountLoggedIn] = useState(null);
     const [connectButtonText, setConnectButtonText] = useState("Connect Wallet");
+    const [connectButtonDisabled, setConnectButtonDisabled] = useState(false);
 
 
     const [provider, setProvider] = useState(null);
@@ -36,42 +38,49 @@ function Container() {
 
     const connectWalletHandler = () => {
            try{
-        
+            
+                
             if (window.ethereum) {
+                setConnectButtonDisabled(true);
                     window.ethereum.request({method: "eth_requestAccounts"})
                     .then(result => {
                         accountChangedHandler(result[0]);
                         setConnectButtonText("Wallet Connected");
+                        setErrorMessage('');
+                    }).catch ((e) => {
+                        console.log(e);
+                        if ('data' in e){
+                            setErrorMessage(JSON.stringify(e.data.message));
+                          } 
+                          
+                          else if ('reason' in e) {
+                            setErrorMessage(JSON.stringify(e.reason));
+                          }
+                          else if ('message' in e) {
+                            setErrorMessage(JSON.stringify(e.message));
+                          }
+                          else {
+                            setErrorMessage("Something went wrong, please refresh page");}
+                        setConnectButtonText("Refresh Page To Try Again");
+                        
                     })
             } else {
                 setErrorMessage('Need to install Metamask');
             } }
             catch(error){
+                
                 console.log(error);
+                setConnectButtonText("Refresh Page To Try Again");
             }
     }
 
     const accountChangedHandler = (newAccount) => {
         setAccountLoggedIn(newAccount.slice(0,5) + "..." + newAccount.slice(-4,));
+        
         updateEthers();
     }
 
-    /*
-    const getAccountEthBalance = async () => {
-        try {
-        var balance = await provider.getBalance(accountLoggedIn);
-        setContractVal(ethers.utils.formatEther(balance)); }
-        catch (error){
-            console.log(error);
-        }
-        
-       // var contractName = await contract.rewardsManager();
-       // console.log(contractName);
-       
-       //await contractSigner.authorizeRewardManager(tokenAddress, testAccountAddress);
-
-        //contractSigner.setRewardsDuration(tokenAddress, 1000);
-    }   */
+    
 
     const updateEthers = () => {
         let tempProvider = new ethers.providers.Web3Provider(window.ethereum);
@@ -92,56 +101,24 @@ function Container() {
     return (
         <div>
         
-        <Navbar connectWalletHandler={connectWalletHandler} connectButtonText={connectButtonText} />
+        <Navbar connectWalletHandler={connectWalletHandler} connectButtonText={connectButtonText} connectButtonDisabled={connectButtonDisabled} />
         
         <div className="container">
         <div className="navigation">
-             {/*
-            <div className="navigation-head">
-            <i className="uil uil-align-left">
-            <Icon icon="uil:align-left" />
-            </i>
-            
-            </div> */}
+             
 
             <div  className="grid">
-               {/* <div className="navigation-menu">
-                    <span className="flex">
-                        <i className="uil uil-estate">
-                            <Icon icon="uil:estate" />
-                        </i>
-                        <small>Home</small>
-                    </span>
-                    <span className="flex">
-                        <i className="uil uil-trophy"><Icon icon="uil:trophy" /></i>
-                        <small>Project</small>
-                    </span>
-                    <span className="flex">
-                        <i className="uil uil-bill"><Icon icon="uil:bill" /></i>
-                        <small>Socials</small>
-                    </span>
-                    <span className="flex">
-                        <i className="uil uil-graph-bar"><Icon icon="uil:graph-bar" /></i>
-                        <small>Buy GigaChad</small>
-                    </span>
-                    <span className="flex">
-                        <i className="uil uil-cog"><Icon icon="uil:cog" /></i>
-                        <small>Whitepaper</small>
-                    </span>
-                    <div>
-                    {errorMessage}
-                </div>
-                </div> */}
+               
 
                 
                 
                 <div className="navigation">
                 <i className="uil uil-user"><Icon icon="uil:user" /></i>
                 
-            {/*   <button className="button-18" role="button" onClick={getAccountEthBalance} disabled={accountLoggedIn === null}> Get Balance </button> */}
+            
                 <span className="flex"> Account: {accountLoggedIn} </span> 
                 <div></div>
-             {/*   <span > Eth Balance: {contractVal} </span>   */}
+          
                 </div>
 
             </div>
@@ -150,37 +127,20 @@ function Container() {
 
 
         <div className="main-container">
-            {/*
-            
-            <div className="box" data="1">
-                <img src={"/img/gigachadPNG1_Cartoon.png"} />
-                <div className="box" >
-                <ClaimRewards accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner} />
-                </div>
-            </div>
-                     
-            <div className="box" data="1">
-                <AuthMan  accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner}  />
-            </div>
-            <div className="box" data="1">
-            <AddRewards accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner} contractAddress={contractAddress}/>
-            </div>
-            
-            <div className="box" data="1">
-            
-            </div>
-                    */}
+       
 
-                  
+           { errorMessage && <div className="justToCenter"><span className='transactionText'>{errorMessage}</span></div>      }
             <div className="box" data="1">
             
             <Routes>
             <Route path="/" element={<Welcome/>}/>
-            <Route path="/claimrewards" element={<ClaimRewards accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner} />} />
-            <Route path="/authorize" element={<AuthMan  accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner}  />} />
+            <Route path="/claimrewards" element={<ClaimRewards accountLoggedIn={accountLoggedIn}  contractSigner={contractSigner} />} />
+            <Route path="/authorize" element={<AuthMan  accountLoggedIn={accountLoggedIn}  contractProvider={contract} contractSigner={contractSigner}  />} />
             <Route path="/addrewards" element={<AddRewards accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner} contractAddress={contractAddress} />}/>
             <Route path="/stake" element={<Stake accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner} contractAddress={contractAddress}  />} />
-            <Route path="/unstake" element={<Unstake accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner} />} />
+            <Route path="/unstake" element={<Unstake accountLoggedIn={accountLoggedIn}  contractSigner={contractSigner} />} />
+            <Route path="/ownerChecks" element={<OwnerChecks accountLoggedIn={accountLoggedIn}  contractProvider={contract}  />} />
+            <Route path="/leftOver" element={<LeftOver accountLoggedIn={accountLoggedIn}  contractSigner={contractSigner}  />} />
             </Routes>  
             </div> 
 

@@ -1,21 +1,36 @@
 import React, { useState } from 'react';
+import {ethers} from 'ethers';
 
-function ClaimRewards({accountLoggedIn, provider, contractProvider, contractSigner} ) {
+function ClaimRewards({accountLoggedIn, contractSigner} ) {
     
+  const [claimInputHeading, setclaimInputHeading] = useState("");
+
     const [tokenAddress, settokenAddress] = useState('Enter Token Address');
 
     const [isLoading, setIsLoading] = useState(false);
     const [transactionMessage, setTransactionMessage] = useState('');
     const [claimDisableButton, setClaimDisableButton] = useState(false);
     const [claimButtonText, setClaimButtonText] = useState('Submit');
+    const [validationMessage, setValidationMessage] = useState(null);
 
     const handletokenAddressChange = (event) => {
         
         settokenAddress(event.target.value);
+        
+        if (ethers.utils.isAddress(event.target.value) === true) {
+          setValidationMessage("");
+        } else {
+          setValidationMessage( "Please enter a valid Eth address" );
+        }
       };
+
 
       const handleClaimRewards = async (e) => {
         e.preventDefault();
+
+        if (validateFields(e) !== false) {
+          setValidationMessage("");
+        
         
         try{
 
@@ -47,12 +62,31 @@ function ClaimRewards({accountLoggedIn, provider, contractProvider, contractSign
           setClaimButtonText("Check message above & refresh page");
 
         }
-      };
+      } else {
+        setValidationMessage( "Please enter a valid Eth address" );
+      }}
 
       const handleClearInput = (e) => {
-        if ( e.target.value === "Enter Your Address"){
-        settokenAddress("");}
+        if ( e.target.value === "Enter Token Address"){
+        settokenAddress("");
+      setclaimInputHeading("Enter the token address");}
       }
+
+      const validateFields = (e) => {
+        var isValid = true; 
+       
+         if (e.target.name === "tokenAddress"){
+           if (ethers.utils.isAddress(e.target.value) !== true){
+             setValidationMessage("Please enter a valid ETH address");
+             isValid = false;
+           } else {
+             setValidationMessage("");
+             isValid = true;
+           }} 
+          
+          return isValid;
+          
+          }
     
     
     return (
@@ -60,7 +94,9 @@ function ClaimRewards({accountLoggedIn, provider, contractProvider, contractSign
         <div className="justToCenter"><span className="transactionText">{transactionMessage}</span></div>
         <h2 className="actionHeader"> Claim Them Rewards </h2>
             <form onSubmit={handleClaimRewards}>
-            <input name="tokenAddress" className="actionInputs form-control-lg" value={tokenAddress} onClick={handleClearInput} onChange={handletokenAddressChange}></input>
+            <div className="inputHeadings">{claimInputHeading}</div>
+            <input pattern="^0x[a-fA-F0-9]{40}$" minLength="42" maxLength="42" required name="tokenAddress" className="actionInputs form-control-lg" value={tokenAddress} onClick={handleClearInput} onChange={handletokenAddressChange}></input>
+            <div className="justToCenter"><span className='transactionText'>{validationMessage}</span></div>
             <div className="justToCenter">
             <button className="button-18" type="submit" style={{margin: 10}} disabled={accountLoggedIn === null|| claimDisableButton}> {claimButtonText} </button>
             <br></br>
