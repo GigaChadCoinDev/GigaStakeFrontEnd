@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {ethers} from 'ethers';
+import Form from 'react-bootstrap/Form';
 
 function ClaimRewards({accountLoggedIn, contractSigner} ) {
     
@@ -95,7 +96,13 @@ function ClaimRewards({accountLoggedIn, contractSigner} ) {
         <h2 className="actionHeader"> Claim Them Rewards </h2>
             <form onSubmit={handleClaimRewards}>
             <div className="inputHeadings">{claimInputHeading}</div>
-            <input pattern="^0x[a-fA-F0-9]{40}$" minLength="42" maxLength="42" required name="tokenAddress" className="actionInputs form-control-lg" value={tokenAddress} onClick={handleClearInput} onChange={handletokenAddressChange}></input>
+            <Form.Select name="tokenAddress" className="actionInputs form-control-lg" value={tokenAddress} onChange={handletokenAddressChange}>
+                <option>Select a Token</option>
+                <option value="0xBd7E249F4C292a13b199d0303cAd0654B7CB6968">GigaChad Coin (0xBd...6968) </option>
+                </Form.Select>
+
+
+          {/*   <input pattern="^0x[a-fA-F0-9]{40}$" minLength="42" maxLength="42" required name="tokenAddress" className="actionInputs form-control-lg" value={tokenAddress} onClick={handleClearInput} onChange={handletokenAddressChange}></input> */}
             <div className="justToCenter"><span className='transactionText'>{validationMessage}</span></div>
             <div className="justToCenter">
             <button className="button-18" type="submit" style={{margin: 10}} disabled={accountLoggedIn === null|| claimDisableButton}> {claimButtonText} </button>

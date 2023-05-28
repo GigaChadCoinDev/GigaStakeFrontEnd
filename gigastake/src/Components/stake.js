@@ -179,8 +179,11 @@ function Stake({accountLoggedIn, provider, contractProvider, contractSigner, con
             <h2 className="actionHeader"> Stake </h2>
                 <form onSubmit={handleStake}>
                 <div className="inputHeadings">{stakeInputHeading}</div>
-              
-              <input pattern="^0x[a-fA-F0-9]{40}$" minLength="42" maxLength="42" required name="tokenAddress" className="actionInputs form-control-lg" value={stakeToken} onClick={handleClearInput} onChange={handleStakeTokenChange}></input> 
+                <Form.Select name="tokenAddress" className="actionInputs form-control-lg" value={stakeToken} onChange={handleStakeTokenChange}>
+                <option>Select a Token</option>
+                <option value="0xBd7E249F4C292a13b199d0303cAd0654B7CB6968">GigaChad Coin (0xBd...6968) </option>
+                </Form.Select>
+          {/*  <input pattern="^0x[a-fA-F0-9]{40}$" minLength="42" maxLength="42" required name="tokenAddress" className="actionInputs form-control-lg" value={stakeToken} onClick={handleClearInput} onChange={handleStakeTokenChange}></input>  */}  
                 <div className="justToCenter"><span className='transactionText'>{validationMessage}</span></div>
                 <div className="generalText">+</div>
                 <div className="inputHeadings">{stakeAmountInputHeading}</div>

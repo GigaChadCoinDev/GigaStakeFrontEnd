@@ -142,7 +142,7 @@ function Container() {
             <Route path="/stake" element={<Stake accountLoggedIn={accountLoggedIn} provider={provider} contractProvider={contract} contractSigner={contractSigner} contractAddress={contractAddress}  />} />
             <Route path="/unstake" element={<Unstake accountLoggedIn={accountLoggedIn}  contractSigner={contractSigner} />} />
             <Route path="/ownerChecks" element={<OwnerChecks accountLoggedIn={accountLoggedIn}  contractProvider={contract}  />} />
-            <Route path="/leftOver" element={<LeftOver accountLoggedIn={accountLoggedIn}  contractSigner={contractSigner}  />} />
+        {/*     <Route path="/leftOver" element={<LeftOver accountLoggedIn={accountLoggedIn}  contractSigner={contractSigner}  />} /> */}
             </Routes>  
             </div> 
 

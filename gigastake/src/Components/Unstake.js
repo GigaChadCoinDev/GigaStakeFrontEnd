@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {ethers} from 'ethers';
+import Form from 'react-bootstrap/Form';
 
 function Stake({ accountLoggedIn, contractSigner}) {
     
@@ -107,7 +108,13 @@ function Stake({ accountLoggedIn, contractSigner}) {
             <h2 className="actionHeader"> Unstake </h2>
                 <form onSubmit={handleUnStake}>
                 <div className="inputHeadings">{unstakeInputHeading}</div>
-                <input pattern="^0x[a-fA-F0-9]{40}$" minLength="42" maxLength="42" required name="tokenAddress" className="actionInputs form-control-lg" value={unstakeToken} onClick={handleClearInput} onChange={handleUnStakeTokenChange}></input>
+                <Form.Select name="tokenAddress" className="actionInputs form-control-lg" value={unstakeToken} onChange={handleUnStakeTokenChange}>
+                <option>Select a Token</option>
+                <option value="0xBd7E249F4C292a13b199d0303cAd0654B7CB6968">GigaChad Coin (0xBd...6968) </option>
+                </Form.Select>
+
+
+          {/*      <input pattern="^0x[a-fA-F0-9]{40}$" minLength="42" maxLength="42" required name="tokenAddress" className="actionInputs form-control-lg" value={unstakeToken} onClick={handleClearInput} onChange={handleUnStakeTokenChange}></input> */} 
                 <div className="justToCenter"><span className='transactionText'>{validationMessage}</span></div>
                 <div className="generalText">+</div>
                 <div className="inputHeadings">{unstakeAmountInputHeading}</div>

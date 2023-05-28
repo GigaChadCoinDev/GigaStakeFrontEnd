@@ -64,9 +64,9 @@ function Navbar({connectWalletHandler, connectButtonText, connectButtonDisabled}
                   { dropDownMenuEnabled &&     <Link className='dropdown-links' to="/addrewards" >Add Rewards</Link> }
                         </div>
                         
-                        <div >
+                  {/*      <div >
                         { dropDownMenuEnabled &&       <Link className='dropdown-links' to="/leftover" >Get Left Over Rewards</Link> }
-                        </div>
+                        </div>  */} 
 
                         <div >
                         { dropDownMenuEnabled &&       <Link className='dropdown-links' to="/authorize" >Authorize</Link> }
