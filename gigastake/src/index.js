@@ -5,13 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter} from "react-router-dom";
+import GigaMint from './Components/GigaMint';
+import {Route, Routes} from "react-router-dom";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
+   
+    <Routes>
+        <Route path="/gigamint/*" element={<GigaMint />} />
+        <Route path="*" element={<App />} />
+      
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

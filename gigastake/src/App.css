@@ -427,4 +427,455 @@
   font-weight: bolder;
 }
 
+@keyframes imageCycleLeft {
+  0% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad1.png'); }
+  25% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad3.png'); }
+  50% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad4.png'); }
+  75% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad2.png'); }
+  100% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad1.png'); }
+}
 
+.circleImageContainerLeft{
+  grid-column: 1;  
+  grid-row: 2; 
+  background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD.png');
+  background-size: cover;
+  border-radius: 100% 100%;
+  border: 2px solid white;
+  height: 25vw;
+  width: 25vw;
+  margin: auto;
+  box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.3);
+  animation: imageCycleLeft 40s infinite steps(1);
+}
+
+@keyframes imageCycleRight {
+  0% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD.png'); }
+  25% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad5.png'); }
+  50% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad1.png'); }
+  75% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad3.png'); }
+  100% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD.png'); }
+}
+
+.circleImageContainerRight{
+  grid-column: 4;  
+  grid-row: 2; 
+  background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD.png');
+  background-size: cover;
+  border-radius: 100% 100%;
+  border: 2px solid white;
+  height: 25vw;
+  width: 25vw;
+  margin: auto;
+  box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.3);
+  transform: scaleX(-1);
+  animation: imageCycleRight 40s infinite steps(1);
+}
+
+.custom-cursor{
+  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\gigachadcursor.png'), auto;
+}
+
+.gigaMintContainer {
+  display: grid;
+  grid-template-columns: 33vw 17vw 17vw 33vw;
+  grid-template-rows: 25vh 60vh 15vh;
+}
+
+.containerBackgroundLeftHalf{
+  grid-column: 1 / 3;
+  grid-row: 1 / 4;
+  background-image: linear-gradient(#191970, #191970b4), url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD_websitecolumn.png');
+  background-size: 100%;
+}
+.containerBackgroundRightHalf{
+  grid-column: 3/6;
+  grid-row: 1 / 4;
+  background-image: linear-gradient(#191970, #191970b4), url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD_websitecolumn_right.png');
+  background-size: 100%;
+}
+
+.mintContainer {
+  grid-column: 2/4;  
+  grid-row: 2; 
+  background-color: #8e8ed677;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
+  overflow:visible;
+}
+
+
+@font-face {
+  font-family: 'CustomSporty';
+  src: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\fonts\Darknet-K7xOX.ttf') format('truetype');
+}
+
+.mintButton {
+  
+  background-color: #008263;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+  
+  font-family: 'CustomSporty';
+  font-size: 1vw;
+  font-weight: 1;
+  padding: .1vw;
+  
+  width: fit-content;
+  height: 2.5vw;
+  min-width: 0px;
+  overflow: hidden;
+  
+
+  
+ 
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+
+
+  
+}
+
+.mintButton:hover,
+.mintButton:focus{ 
+  box-shadow: 0px 0px 20px 4px rgba(255, 255, 255, 0.3);
+  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+}
+
+.mintButton:active {
+  transform: scale(0.95);
+  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+}
+
+.mintButton:disabled { 
+  background-color: #00826462;
+  color: #ffffff;
+}
+
+.mintContainerUpper{
+  min-height: 70%;
+  display: block;
+  text-align: center;
+  
+}
+
+.mintContainerLower{
+  min-height: 30%;
+}
+
+.gigaChadsTitleContainer{
+  grid-column: 2/4;
+  grid-row: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+@font-face {
+  font-family: 'CustomSportyBTE';
+  src: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\fonts\BTE-Sporty-DEMO.otf') format('opentype');
+}
+
+@keyframes titleMotion {
+  0% { transform: perspective(500px) rotateY(0deg); }
+  25% { transform: perspective(500px) rotateY(30deg); }  
+  75% { transform: perspective(500px) rotateY(-30deg); }
+  100% { transform: perspective(500px) rotateY(0deg); 
+  }
+}
+
+.gigaChadsTitle{
+  font-family: 'CustomSportyBTE';
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #008263, 0 0 30px #008263, 0 0 40px #008263, 0 0 55px #008263, 0 0 75px #008263;
+  color: #008263;
+  font-size: xxx-large;
+  animation: titleMotion 30s infinite ease-out, titleMotion 30s infinite linear, titleMotion 30s infinite ease-out, titleMotion 30s infinite linear;
+}
+
+.countLeft{
+  font-family: 'CustomSportyBTE';
+  color: white;
+  font-size: xx-large;
+  padding-top: 4%;
+  padding-bottom: 2%;
+}
+
+.address{
+  font-family: 'CustomSporty';
+  color: white;
+  font-size: medium;
+  padding-top: 2%;
+  padding: 1%;
+  max-width: 90%;
+  margin:auto;
+  background-color: #19197059;
+  border-radius: 1dvh;
+  box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
+}
+.gasfees{
+  font-family: 'CustomSporty';
+  color:#191970;
+  font-size: large;
+  padding-bottom: 4%;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\fonts\Roboto-Regular.ttf') format('truetype');
+}
+
+
+.cost{
+  font-family: 'CustomSporty';
+  color:#191970;
+  font-size: large;
+  font-weight: 600;
+  padding-top: 2%;
+  max-width: 70%;
+  margin:auto;
+}
+
+.desc{
+  font-family: 'CustomSporty';
+  color:#191970;
+  font-size: 1dvi;
+  padding: 1%;
+  max-width: 90%;
+  margin:auto;
+  background-color: #AEA9BA;
+  border-radius: 2dvh;
+  font-weight: bolder;
+  box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
+}
+
+.clickToSecure{
+  font-family: 'CustomSporty';
+  color: white;
+  font-size: medium;
+  padding-top: 2%;
+  padding-bottom: 4%;
+}
+
+.incrementerButton {
+  background-color: #19197056;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  
+  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+  font-family: 'CustomSporty';
+  font-size: 16px;
+  font-weight: 1;
+  margin-top:2%;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  padding: 0px 10px 00px 10px;
+
+  
+}
+
+.incrementerButton:hover,
+.incrementerButton:focus{ 
+  box-shadow: 0px 0px 20px 4px rgba(255, 255, 255, 0.3);
+  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+}
+
+.incrementerButton:active {
+  transform: scale(0.95);
+  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+}
+
+.incrementerButton:disabled { 
+  background-color: #00826462;
+  color: #ffffff;
+}
+
+.amountToMint{
+  font-family: 'Roboto';
+  color: white;
+  font-size: x-large;
+  padding-top: 4%;
+  padding-bottom: 2%;
+}
+
+
+.gigaMintErrorText{
+  text-align: center;
+  font-size: large;
+  padding: 1%;
+  max-width: 90%;
+  margin:auto;
+  
+}
+
+.gigaMintErrorTextBG{
+  width: 100%;
+  text-align: center;
+  overflow:auto;
+
+  padding: 1%;
+  max-width: 90%;
+  margin:auto;
+  margin-top: 10%;
+  background-color: #c57587;
+  border-radius: 2dvh;
+  font-weight: bolder;
+  box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
+}
+
+
+
+.spinner {
+  margin-left: 15%;
+  width: 40px;
+  height: 40px;
+ float: left;
+  display: flex;
+  -webkit-animation: sk-rotate 2.0s infinite linear;
+  animation: sk-rotate 2.0s infinite linear;
+}
+
+.spinner2 {
+  margin-right: 15%;
+  width: 40px;
+  height: 40px;
+ float: right;
+  display: flex;
+  -webkit-animation: sk-rotate 2.0s infinite linear;
+  animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+  width: 40%;
+  height: 40%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #1919706e;
+  border-radius: 100%;
+  box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.185);
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px rgba(255, 0, 0, 0.438), -2px -2px rgba(0, 255, 0, 0.295), -2px 2px rgba(0, 0, 255, 0.295), 2px -2px rgba(255, 255, 0, 0.247); }
+  20% { text-shadow: -2px -2px rgba(255, 0, 0, 0.295), 2px 2px rgba(0, 255, 0, 0.37), 2px -2px rgba(0, 0, 255, 0.288), -2px 2px rgba(255, 255, 0, 0.322); }
+  40% { text-shadow: 2px -2px rgba(255, 0, 0, 0.274), -2px 2px rgba(0, 255, 0, 0.418), -2px -2px rgba(0, 0, 255, 0.301), 2px 2px rgba(255, 255, 0, 0.322); }
+  60% { text-shadow: -2px 2px rgba(255, 0, 0, 0.329), 2px -2px rgba(0, 255, 0, 0.411), 2px 2px rgba(0, 0, 255, 0.315), -2px -2px rgba(255, 255, 0, 0.384); }
+  80% { text-shadow: 2px 2px rgba(255, 0, 0, 0.301), -2px -2px rgba(0, 255, 0, 0.349), -2px 2px rgba(0, 0, 255, 0.301), 2px -2px rgba(255, 255, 0, 0.329); }
+  100% { text-shadow: -2px -2px rgba(255, 0, 0, 0.342), 2px 2px rgba(0, 255, 0, 0.247), 2px -2px rgba(0, 0, 255, 0.267), -2px 2px rgba(255, 255, 0, 0.377); }
+}
+
+.releaseStage {
+  animation: glitch 10s infinite;
+}
+
+
+
+
+
+/* Styles for smartphones */
+@media (max-width: 912px) {
+  .gigaMintContainer {
+    display: grid;
+    grid-template-columns: 10vw 40vw 40vw 10vw;
+    grid-template-rows: 10vh 20vh 65vh 5vh;
+  }
+
+
+  .mintContainer {
+    grid-column: 2/4;  
+    grid-row: 3; 
+    background-color: #8e8ed677;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
+    overflow: auto;
+  }
+
+  .circleImageContainerRight{
+    grid-column: 3;  
+    grid-row: 2; 
+    
+  }
+
+    .circleImageContainerLeft{
+      grid-column: 2;  
+      grid-row: 2; }
+      
+      .containerBackgroundRightHalf{
+        grid-row: 1/5;
+      }
+      .containerBackgroundLeftHalf{
+        grid-row: 1/5;
+      }
+
+      .mintButton{
+        width: 35%;
+        height: 7vw;
+        font-size: 2.2vw;
+      }
+
+      .desc{
+        font-size: 2.5vw;
+      }
+
+      .address{
+        font-size: 3vw;
+      }
+
+      .gigaChadsTitle{
+        padding-top: 3vmin;
+        font-size: 6vmin;
+      }
+
+      .cost{
+        font-size: 3vmin;
+      }
+      .gasfees{
+        font-size: 4vmin;
+      }
+
+      .clickToSecure{
+        font-size: 4vmin;
+      }
+
+      
+  
+}
