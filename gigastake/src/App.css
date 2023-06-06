@@ -508,7 +508,7 @@
 
 @font-face {
   font-family: 'CustomSporty';
-  src: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\fonts\Darknet-K7xOX.ttf') format('truetype');
+  src: url('../public/fonts/Darknet-K7xOX.ttf') format('truetype');
 }
 
 .mintButton {
@@ -579,7 +579,7 @@
 
 @font-face {
   font-family: 'CustomSportyBTE';
-  src: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\fonts\BTE-Sporty-DEMO.otf') format('opentype');
+  src: url('../public/fonts/BTE-Sporty-DEMO.otf') format('opentype');
 }
 
 @keyframes titleMotion {
@@ -627,7 +627,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\fonts\Roboto-Regular.ttf') format('truetype');
+  src: url('../public/fonts/Roboto-Regular.ttf') format('truetype');
 }
 
 
