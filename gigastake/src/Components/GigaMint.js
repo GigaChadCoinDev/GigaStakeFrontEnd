@@ -110,7 +110,7 @@ const GigaMint = () => {
                 setIsLoading(true);
                 setButtonText("Confirming..");
                 setButtonEnabled(false);
-                let amountToParse = (0.005 * amountToMint);
+                let amountToParse = (0.002 * amountToMint);
                 var minting = await contractSigner.mint(amountToMint, {value: ethers.utils.parseEther(amountToParse.toString())});
                 const receipt = await minting.wait();
                 if (receipt){
