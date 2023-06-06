@@ -89,6 +89,7 @@ const GigaMint = () => {
                               }
                               else {
                                 setErrorMessage("Something went wrong, please refresh page");}
+                                setButtonEnabled(false);
                                 setButtonText("Refresh Page");
                                 setIsLoading(false);
                             

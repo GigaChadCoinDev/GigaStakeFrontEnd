@@ -428,17 +428,17 @@
 }
 
 @keyframes imageCycleLeft {
-  0% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad1.png'); }
-  25% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad3.png'); }
-  50% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad4.png'); }
-  75% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad2.png'); }
-  100% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad1.png'); }
+  0% { background-image: url('../public/img/ExampleChad1.png'); }
+  25% { background-image: url('../public/img/ExampleChad3.png'); }
+  50% { background-image: url('../public/img/ExampleChad4.png'); }
+  75% { background-image: url('../public/img/ExampleChad2.png'); }
+  100% { background-image: url('../public/img/ExampleChad1.png'); }
 }
 
 .circleImageContainerLeft{
   grid-column: 1;  
   grid-row: 2; 
-  background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD.png');
+  background-image: url('../public/img/TigFirstGIGACHAD.png');
   background-size: cover;
   border-radius: 100% 100%;
   border: 2px solid white;
@@ -450,17 +450,17 @@
 }
 
 @keyframes imageCycleRight {
-  0% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD.png'); }
-  25% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad5.png'); }
-  50% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad1.png'); }
-  75% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\ExampleChad3.png'); }
-  100% { background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD.png'); }
+  0% { background-image: url('../public/img/TigFirstGIGACHAD.png'); }
+  25% { background-image: url('../public/img/ExampleChad5.png'); }
+  50% { background-image: url('../public/img/ExampleChad1.png'); }
+  75% { background-image: url('../public/img/ExampleChad3.png'); }
+  100% { background-image: url('../public/img/TigFirstGIGACHAD.png'); }
 }
 
 .circleImageContainerRight{
   grid-column: 4;  
   grid-row: 2; 
-  background-image: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD.png');
+  background-image: url('../public/img/TigFirstGIGACHAD.png');
   background-size: cover;
   border-radius: 100% 100%;
   border: 2px solid white;
@@ -473,7 +473,7 @@
 }
 
 .custom-cursor{
-  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\gigachadcursor.png'), auto;
+  cursor: url('../public/img/gigachadcursor.png'), auto;
 }
 
 .gigaMintContainer {
@@ -485,13 +485,13 @@
 .containerBackgroundLeftHalf{
   grid-column: 1 / 3;
   grid-row: 1 / 4;
-  background-image: linear-gradient(#191970, #191970b4), url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD_websitecolumn.png');
+  background-image: linear-gradient(#191970, #191970b4), url('../public/img/TigFirstGIGACHAD_websitecolumn.png');
   background-size: 100%;
 }
 .containerBackgroundRightHalf{
   grid-column: 3/6;
   grid-row: 1 / 4;
-  background-image: linear-gradient(#191970, #191970b4), url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\TigFirstGIGACHAD_websitecolumn_right.png');
+  background-image: linear-gradient(#191970, #191970b4), url('../public/img/TigFirstGIGACHAD_websitecolumn_right.png');
   background-size: 100%;
 }
 
@@ -502,7 +502,7 @@
   border-radius: 30px;
   text-align: center;
   box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.3);
-  overflow:visible;
+  overflow:auto;
 }
 
 
@@ -518,13 +518,14 @@
   border-radius: 10px;
   box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.3);
   color: #ffffff;
-  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+  cursor: url('../public/img/bicep.png'), auto;
   
   font-family: 'CustomSporty';
   font-size: 1vw;
   font-weight: 1;
   padding: .1vw;
-  
+  padding-left: 1vw;
+  padding-right: 1vw;
   width: fit-content;
   height: 2.5vw;
   min-width: 0px;
@@ -542,12 +543,12 @@
 .mintButton:hover,
 .mintButton:focus{ 
   box-shadow: 0px 0px 20px 4px rgba(255, 255, 255, 0.3);
-  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+  cursor: url('../public/img/bicep.png'), auto;
 }
 
 .mintButton:active {
   transform: scale(0.95);
-  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+  cursor: url('../public/img/bicep.png'), auto;
 }
 
 .mintButton:disabled { 
@@ -643,7 +644,7 @@
 .desc{
   font-family: 'CustomSporty';
   color:#191970;
-  font-size: 1dvi;
+  font-size: .9dvi;
   padding: 1%;
   max-width: 90%;
   margin:auto;
@@ -668,7 +669,7 @@
   box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.3);
   color: #ffffff;
   
-  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+  cursor: url('../public/img/bicep.png'), auto;
   font-family: 'CustomSporty';
   font-size: 16px;
   font-weight: 1;
@@ -685,12 +686,12 @@
 .incrementerButton:hover,
 .incrementerButton:focus{ 
   box-shadow: 0px 0px 20px 4px rgba(255, 255, 255, 0.3);
-  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+  cursor: url('../public/img/bicep.png'), auto;
 }
 
 .incrementerButton:active {
   transform: scale(0.95);
-  cursor: url('C:\Users\TiG\GigaStakeWebsite\gigastake\public\img\bicep.png'), auto;
+  cursor: url('../public/img/bicep.png'), auto;
 }
 
 .incrementerButton:disabled { 
