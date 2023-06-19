@@ -110,7 +110,7 @@ const GigaMint = () => {
                 setIsLoading(true);
                 setButtonText("Confirming..");
                 setButtonEnabled(false);
-                let amountToParse = (0.002 * amountToMint);
+                let amountToParse = (0.005 * amountToMint);
                 var minting = await contractSigner.mint(amountToMint, {value: ethers.utils.parseEther(amountToParse.toString())});
                 const receipt = await minting.wait();
                 if (receipt){
@@ -169,7 +169,7 @@ const GigaMint = () => {
                     <div className="mintContainerUpper">
                         <div className='countLeft'>{amountMinted}/777</div>
                         <div className='address'>{accountLoggedIn}</div>
-                        <div className='cost'><span className="releaseStage">Pre-Sale</span> Cost:<br></br> .002 ETH</div>
+                        <div className='cost'><span className="releaseStage">Public-Sale</span> Cost:<br></br> .005 ETH</div>
                         <div className='gasfees'>(Excluding gas fees)</div>
                         <div className='desc' >The GIGA CHADs NFT collection is limited to only 777 pieces to create scarcity and demand. GIGA CHADs NFTs will also be used as proof of membership to allow community members to receive exclusive benefits. </div>
                         
